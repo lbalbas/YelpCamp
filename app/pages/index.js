@@ -1,24 +1,18 @@
 import Head from "next/head";
-import Presentation from "./components/presentation";
-import NavBar from "./components/navbar";
-import Projects from "./components/projects";
-import About from "./components/about";
-import Footer from "./components/footer";
+import Button from "./components/Button";
+
 
 export default function Home() {
 	return (
 		<div>
 			<Head>
-				<title>Luis Balbás' Portfolio</title>
+				<title>Yelp Camp</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div className="top-pattern">
-				<NavBar />
-				<Presentation />
+			<div>
+				<h1>Hello World</h1>
+				<Button>Hi</Button>
 			</div>
-			<Projects />
-			<About />
-			<Footer />
 		</div>
 	);
 }
