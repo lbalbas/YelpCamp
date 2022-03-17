@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Button from "./components/Button";
 
-
 export default function Home() {
 	return (
 		<div>
@@ -11,7 +10,7 @@ export default function Home() {
 			</Head>
 			<div>
 				<h1>Hello World</h1>
-				<Button>Hi</Button>
+				<Button>View Campgrounds</Button>
 			</div>
 		</div>
 	);
