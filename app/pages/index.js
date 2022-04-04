@@ -11,7 +11,7 @@ export default function Home() {
 			<div class="landing-page">
 				<img src="/Logo.svg" alt="" className="logo"/>
 				<div className="landing-main">
-					<h1 className="bold">Explore the best camps on Earth</h1>
+					<h1 className="bold">Explore the best camps on Earth.</h1>
 					<p className="light-text">YelpCamp is a curated list of the best camping spots on Earth. 
 					Unfiltered and unbiased reviews.</p>
 					<ul className="feature-list light-text">
@@ -26,15 +26,16 @@ export default function Home() {
 						</li>
 					</ul>
 					<Button>View Campgrounds</Button>
-				</div>
-				<div className="landing-partners">
-					<h5>Partnered with:</h5>
-					<div className="partners-cont">
-						<img src="" alt=""/>
-						<img src="" alt=""/>
-						<img src="" alt=""/>
+					<div className="landing-partners">
+						<h3>Partnered with:</h3>
+						<div className="partners-cont">
+							<img src="Airbnb.svg" alt=""/>
+							<img src="Booking.svg" alt=""/>
+							<img src="Plum Guide.svg" alt=""/>
+						</div>
 					</div>
 				</div>
+				
 				<div className="landing-image">
 				</div>
 			</div>

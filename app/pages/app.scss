@@ -1,5 +1,6 @@
 $light-text : #777370;
 
+
 html,
 body {
 	margin: 0;
@@ -13,43 +14,71 @@ h1,h2,h3,h4,h5,h6{
 	padding:0;
 	margin: 0;
 	font-weight: 500;
+	font-size: inherit;
 }
 h1{
-	font-size: 2.5rem;
+	font-size: 3.2rem;
 }
+
 .bold{
 	font-weight: 700;
 }
+
 .light-text{
 	color: $light-text;
 }
+
 .landing-page{
 	display:grid;
-	grid-template-columns: 60% 40%;
-	width: 80vw;
+	grid-template-columns: repeat(24, 1fr);
+	grid-template-rows: repeat(16, 1fr);
+	width: 100vw;
+	height: 100vh;
 	margin: 0 auto;
+}
+.landing-main{
+	grid-row-start: 5;
+	grid-row-end: 14;
+	grid-column-start: 3;
+	grid-column-end: 10;
 }
 .feature-list{
 	display: flex;
 	flex-direction: column;
 	width: 300px;
+	padding-left: 0;
 	list-style: none;
 }
+
 .feature{
 	display: flex;
 	align-items: center;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 }
+
 .feature > span {
 	margin-left: 0.5rem;
 }
+
 .landing-image{
 	background-image: url("../public/Hero Image.jpg");
-	width: 100%;
-	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	grid-column-start: 13;
+	grid-column-end: span 24;
+	grid-row-start: 1;
+	grid-row-end: span 16;
 }
-
+.landing-main{
+	p{
+		width: 90%;
+	}
+}
+.logo{
+	grid-row-start: 2;
+	grid-column-start: 3;
+}
 .button {
 	background-color: black;
 	border: none;
@@ -58,8 +87,96 @@ h1{
 	cursor: pointer;
 	font-weight: 600;
 	min-width: 170px;
-	width:100%;
 	max-width: 400px;;
-	padding: 20px 0 20px 0;
+	padding: 20px 25px;
 	font-size: 1rem;
+}
+.landing-partners{
+	font-size: 1rem;
+	color: $light-text;
+	margin-top: 50px;
+}
+.landing-partners{
+	h3{
+		padding-bottom: 10px;
+	}
+}
+@media (max-width: 500px){
+	.logo{
+		grid-row-start: 2;
+		grid-row-end: 3;
+		grid-column-start: 3;
+	}
+	.landing-page{
+		height: 100%;
+		grid-template-rows: repeat(20, 50px);
+	}
+	.landing-image{
+		background-image: url("../public/Hero Image (Tablet and Mobile).jpg");
+		grid-column-start: 1;
+		grid-column-end: span 24;
+		grid-row-start: 3;
+		grid-row-end: span 8;
+		width: 100vw;
+		background-size: initial;
+		background-position: center 70%;
+	}
+	.landing-main{
+		grid-column-start: 3;
+		grid-column-end: span 24;
+		grid-row-start: 12;
+		grid-row-end: span 25;
+	}
+	.landing-main{
+		h1{
+			font-size: 2rem;
+			width: 80%;
+		}
+		p{
+			width: 90%;
+		}
+	}
+	.landing-partners{
+		padding-bottom: 30px;
+	}
+}
+
+@media (min-width: 500px) and (max-width: 1024px){
+	.logo{
+		padding-top: 5px;
+		grid-row-start: 2;
+		grid-row-end: 3;
+		grid-column-start: 3;
+	}
+	.landing-page{
+		height: 100%;
+		grid-template-rows: repeat(25, 50px);
+	}
+	.landing-image{
+		background-image: url("../public/Hero Image (Tablet and Mobile).jpg");
+		grid-column-start: 1;
+		grid-column-end: span 24;
+		grid-row-start: 4;
+		grid-row-end: span 12;
+		height: 100%;
+		width: 100vw;
+		background-size: contain;
+	}
+	.landing-main{
+		grid-column-start: 3;
+		grid-column-end: span 17;
+		grid-row-start: 14;
+		grid-row-end: span 25;
+	}
+	.landing-main{
+		h1{
+			font-size: 3rem;
+		}
+		p{
+			width: 85%;
+		}
+	}
+	.landing-partners{
+		padding-bottom: 30px;
+	}
 }
