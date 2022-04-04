@@ -34,7 +34,6 @@ h1{
 	grid-template-rows: repeat(16, 1fr);
 	width: 100vw;
 	height: 100vh;
-	margin: 0 auto;
 }
 .landing-main{
 	grid-row-start: 5;
@@ -81,14 +80,15 @@ h1{
 }
 .button {
 	background-color: black;
+	display: inline-block;
+	text-decoration: none;
 	border: none;
 	border-radius: 5px;
 	color: white;
 	cursor: pointer;
 	font-weight: 600;
-	min-width: 170px;
 	max-width: 400px;;
-	padding: 20px 25px;
+	padding: 20px 25px ;
 	font-size: 1rem;
 }
 .landing-partners{
@@ -141,7 +141,7 @@ h1{
 	}
 }
 
-@media (min-width: 500px) and (max-width: 1024px){
+@media (min-width: 500px) and (max-width: 1023px){
 	.logo{
 		padding-top: 5px;
 		grid-row-start: 2;
@@ -150,7 +150,7 @@ h1{
 	}
 	.landing-page{
 		height: 100%;
-		grid-template-rows: repeat(25, 50px);
+		grid-template-rows: repeat(20, 50px);
 	}
 	.landing-image{
 		background-image: url("../public/Hero Image (Tablet and Mobile).jpg");
@@ -165,7 +165,7 @@ h1{
 	.landing-main{
 		grid-column-start: 3;
 		grid-column-end: span 17;
-		grid-row-start: 14;
+		grid-row-start: 13;
 		grid-row-end: span 25;
 	}
 	.landing-main{
