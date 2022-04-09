@@ -9,6 +9,10 @@ body {
 * {
 	font-family: 'Archivo', sans-serif;
 }
+a:visited, a:link{
+	text-decoration: none;
+	color: inherit;
+}
 h1,h2,h3,h4,h5,h6{
 	padding:0;
 	margin: 0;
@@ -26,7 +30,6 @@ h1{
 .light-text{
 	color: $light-text;
 }
-
 .landing-page{
 	display:grid;
 	grid-template-columns: repeat(24, 1fr);
@@ -54,11 +57,9 @@ h1{
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 }
-
 .feature > span {
 	margin-left: 0.5rem;
 }
-
 .landing-image{
 	background-image: url("../public/Hero Image.jpg");
 	background-size: cover;
@@ -77,19 +78,6 @@ h1{
 	grid-row-start: 2;
 	grid-column-start: 3;
 }
-.button {
-	background-color: black;
-	display: inline-block;
-	text-decoration: none;
-	border: none;
-	border-radius: 5px;
-	color: white;
-	cursor: pointer;
-	font-weight: 600;
-	max-width: 400px;;
-	padding: 20px 25px ;
-	font-size: 1rem;
-}
 .landing-partners{
 	font-size: 1rem;
 	color: $light-text;
@@ -98,6 +86,17 @@ h1{
 .landing-partners{
 	h3{
 		padding-bottom: 10px;
+	}
+}
+.hero-banner{
+	background-color: #f9f6f1;
+	border-radius: 5px;
+	width: 70%;
+	margin: 4rem auto;
+	padding: 4rem;
+	p{
+		color: $light-text;
+		font-weight: 500;
 	}
 }
 @media (max-width: 500px){
@@ -139,6 +138,7 @@ h1{
 		padding-bottom: 30px;
 	}
 }
+
 
 @media (min-width: 500px) and (max-width: 1023px){
 	.logo{

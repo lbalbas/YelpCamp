@@ -1,0 +1,20 @@
+.navbar{
+	display: flex;
+	width: 80%;
+	margin: 3rem auto;
+	align-items: center;
+	justify-content: space-between;
+}
+.navbar{
+	.logo{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 200px;
+		color:#777370;
+		a{
+			font-weight: 700;
+			padding-top: 3px;
+		}
+	}
+}
