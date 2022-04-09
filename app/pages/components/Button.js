@@ -1,5 +1,6 @@
 import React from "react";
+import styles from "./Button.module.scss";
 
 export default function button(props) {
-	return <a href={props.href} type="button" className="button">{props.children}</a>;
+	return <a href={props.href} type="button" className={styles.button}>{props.children}</a>;
 }
