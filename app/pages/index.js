@@ -9,7 +9,7 @@ export default function Home() {
 				<title>Yelp Camp</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div class="landing-page">
+			<div className="landing-page">
 				<img src="/Logo.svg" alt="" className="logo"/>
 				<div className="landing-main">
 					<h1 className="bold">Explore the best camps on Earth.</h1>

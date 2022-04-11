@@ -13,8 +13,8 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Navbar />
-			<div class="hero-banner">
-				<h1 className="bold">Welcome to YelpCamp!</h1>
+			<div className="hero-banner">
+				<h2 className="bold">Welcome to YelpCamp!</h2>
 				<p>View our hand-picked campgrounds from all over <br/> the world, or add your own.</p>
 				<Search/>
 			</div>

@@ -1,0 +1,30 @@
+.searchContainer{
+	width: 340px;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 0 4rem 4rem;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.inputContainer{
+	position: relative;
+}
+.input{
+	padding: 1.2rem 0 1.2rem 3rem;
+	width: 170px;
+	border-radius: 5px;
+	font-size: 1rem;
+	border: 1px solid #c9cac5;
+}
+.icon{
+	position: absolute;
+	z-index: 99;
+	top: 33%;
+	left: 10%;
+}
+.add{
+	color:#777370;
+	text-decoration: underline;
+	margin-top: 15px;
+	cursor: pointer;
+}

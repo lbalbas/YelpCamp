@@ -22,7 +22,9 @@ h1,h2,h3,h4,h5,h6{
 h1{
 	font-size: 3.2rem;
 }
-
+h2{
+	font-size: 2rem;
+}
 .bold{
 	font-weight: 700;
 }
@@ -91,10 +93,13 @@ h1{
 .hero-banner{
 	background-color: #f9f6f1;
 	border-radius: 5px;
-	width: 70%;
+	width: 80%;
 	margin: 4rem auto;
-	padding: 4rem;
+	h2{
+		padding: 4rem 0 0 4rem;
+	}
 	p{
+		padding: 0 0 0 4rem;
 		color: $light-text;
 		font-weight: 500;
 	}
