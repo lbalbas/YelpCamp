@@ -31,3 +31,15 @@
 		color: #777370;
 	}
 }
+@media (max-width: 500px){
+	.list{
+		grid-template-columns: 1fr;
+		width: 90%;
+	}
+}
+@media (min-width: 500px) and (max-width: 1023px){
+	.list{
+		grid-template-columns: 1fr 1fr;
+		width: 90%;
+	}
+}

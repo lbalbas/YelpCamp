@@ -15,7 +15,7 @@ export default function Home() {
 			<Navbar />
 			<div className="hero-banner">
 				<h2 className="bold">Welcome to YelpCamp!</h2>
-				<p>View our hand-picked campgrounds from all over <br/> the world, or add your own.</p>
+				<p>View our hand-picked campgrounds from all over the world, or add your own.</p>
 				<Search/>
 			</div>
 			<CampgroundList/>

@@ -26,7 +26,7 @@ export default function Home() {
 							<img src="Checkmark.svg" alt="Checkmark"/><span>See locations for all camps.</span>	
 						</li>
 					</ul>
-					<Link href="/campgrounds" passHref><Button>View Campgrounds</Button></Link>
+					<Link href="/campgrounds" passHref><a><Button>View Campgrounds</Button></a></Link>
 					<div className="landing-partners">
 						<h3>Partnered with:</h3>
 						<div className="partners-cont">

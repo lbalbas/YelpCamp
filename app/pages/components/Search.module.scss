@@ -5,6 +5,10 @@
 	padding: 0 0 4rem 4rem;
 	align-items: center;
 	flex-wrap: wrap;
+	a{
+		width: 100px;
+		text-align: center;
+	}
 }
 .inputContainer{
 	position: relative;
@@ -27,4 +31,36 @@
 	text-decoration: underline;
 	margin-top: 15px;
 	cursor: pointer;
+	box-sizing: border-box;
+	text-align: left;
+	width: 100%;
+}
+@media (max-width: 500px){
+	.searchContainer{
+		flex-direction: column;
+		padding: 0;
+		margin: 0 auto;
+		width: 83%;
+		a{
+			margin-top: 10px;
+			width: 100%;
+			text-align: center;
+		}
+	}
+	.inputContainer{
+		width: 100%;
+	}
+	.icon{
+		left: 8%;
+	}
+	.input{
+		box-sizing: border-box;
+		width: 100%;
+		padding: 1.1rem 0 1.1rem 3rem;
+	}
+}
+@media (min-width: 500px) and (max-width: 1023px){
+	.searchContainer{
+		padding: 0 0 3rem 3rem;
+	}
 }
