@@ -18,3 +18,13 @@
 		}
 	}
 }
+@media (max-width: 500px){
+	.navbar{
+		width: 90%;
+	}
+}
+@media (min-width: 500px) and (max-width: 1023px){
+	.navbar{
+		width: 90%;
+	}
+}

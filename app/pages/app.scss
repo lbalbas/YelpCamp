@@ -44,6 +44,12 @@ h2{
 	grid-row-end: 14;
 	grid-column-start: 3;
 	grid-column-end: 10;
+	a{
+		a{
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+	}
 }
 .feature-list{
 	display: flex;
@@ -110,6 +116,22 @@ h2{
 		grid-row-end: 3;
 		grid-column-start: 3;
 	}
+	.hero-banner{
+		background-color: #f9f6f1;
+		border-radius: 5px;
+		width: 90%;
+		margin: 4rem auto;
+		padding-bottom: 2rem;
+		h2{
+			padding: 2rem 0 0 2rem;
+		}
+		p{
+			padding: 0 0 0 2rem;
+			color: $light-text;
+			font-weight: 500;
+			width: 80%;
+		}
+	}
 	.landing-page{
 		height: 100%;
 		grid-template-rows: repeat(20, 50px);
@@ -151,6 +173,22 @@ h2{
 		grid-row-start: 2;
 		grid-row-end: 3;
 		grid-column-start: 3;
+	}
+	.hero-banner{
+		background-color: #f9f6f1;
+		border-radius: 5px;
+		width: 90%;
+		margin: 4rem auto;
+		padding-bottom: 2rem;
+		h2{
+			padding: 4rem 0 0 3rem;
+		}
+		p{
+			padding: 0 0 0 3rem;
+			color: $light-text;
+			font-weight: 500;
+			width: 80%;
+		}
 	}
 	.landing-page{
 		height: 100%;
