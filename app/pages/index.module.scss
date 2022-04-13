@@ -1,0 +1,199 @@
+$light-text : #777370;
+
+.bold{
+	font-weight: 700;
+}
+
+.light-text{
+	color: $light-text;
+}
+.landing-page{
+	display:grid;
+	grid-template-columns: repeat(24, 1fr);
+	grid-template-rows: repeat(16, 1fr);
+	width: 100vw;
+	height: 100vh;
+}
+.landing-main{
+	grid-row-start: 5;
+	grid-row-end: 14;
+	grid-column-start: 3;
+	grid-column-end: 10;
+	a{
+		a{
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+	}
+}
+.feature-list{
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	padding-left: 0;
+	list-style: none;
+}
+
+.feature{
+	display: flex;
+	align-items: center;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+.feature > span {
+	margin-left: 0.5rem;
+}
+.landing-image{
+	background-image: url("../public/Hero Image.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	grid-column-start: 13;
+	grid-column-end: span 24;
+	grid-row-start: 1;
+	grid-row-end: span 16;
+}
+.landing-main{
+	p{
+		width: 90%;
+	}
+}
+.logo{
+	grid-row-start: 2;
+	grid-column-start: 3;
+}
+.landing-partners{
+	font-size: 1rem;
+	color: $light-text;
+	margin-top: 50px;
+}
+.landing-partners{
+	h3{
+		padding-bottom: 10px;
+	}
+}
+.hero-banner{
+	background-color: #f9f6f1;
+	border-radius: 5px;
+	width: 80%;
+	margin: 4rem auto;
+	h2{
+		padding: 4rem 0 0 4rem;
+	}
+	p{
+		padding: 0 0 0 4rem;
+		color: $light-text;
+		font-weight: 500;
+	}
+}
+@media (max-width: 500px){
+	.logo{
+		grid-row-start: 2;
+		grid-row-end: 3;
+		grid-column-start: 3;
+	}
+	.hero-banner{
+		background-color: #f9f6f1;
+		border-radius: 5px;
+		width: 90%;
+		margin: 4rem auto;
+		padding-bottom: 2rem;
+		h2{
+			padding: 2rem 0 0 2rem;
+		}
+		p{
+			padding: 0 0 0 2rem;
+			color: $light-text;
+			font-weight: 500;
+			width: 80%;
+		}
+	}
+	.landing-page{
+		height: 100%;
+		grid-template-rows: repeat(20, 50px);
+	}
+	.landing-image{
+		background-image: url("../public/Hero Image (Tablet and Mobile).jpg");
+		grid-column-start: 1;
+		grid-column-end: span 24;
+		grid-row-start: 3;
+		grid-row-end: span 8;
+		width: 100vw;
+		background-size: initial;
+		background-position: center 70%;
+	}
+	.landing-main{
+		grid-column-start: 3;
+		grid-column-end: span 24;
+		grid-row-start: 12;
+		grid-row-end: span 25;
+	}
+	.landing-main{
+		h1{
+			font-size: 2rem;
+			width: 80%;
+		}
+		p{
+			width: 90%;
+		}
+	}
+	.landing-partners{
+		padding-bottom: 30px;
+	}
+}
+
+
+@media (min-width: 500px) and (max-width: 1023px){
+	.logo{
+		padding-top: 5px;
+		grid-row-start: 2;
+		grid-row-end: 3;
+		grid-column-start: 3;
+	}
+	.hero-banner{
+		background-color: #f9f6f1;
+		border-radius: 5px;
+		width: 90%;
+		margin: 4rem auto;
+		padding-bottom: 2rem;
+		h2{
+			padding: 4rem 0 0 3rem;
+		}
+		p{
+			padding: 0 0 0 3rem;
+			color: $light-text;
+			font-weight: 500;
+			width: 80%;
+		}
+	}
+	.landing-page{
+		height: 100%;
+		grid-template-rows: repeat(20, 50px);
+	}
+	.landing-image{
+		background-image: url("../public/Hero Image (Tablet and Mobile).jpg");
+		grid-column-start: 1;
+		grid-column-end: span 24;
+		grid-row-start: 4;
+		grid-row-end: span 12;
+		height: 100%;
+		width: 100vw;
+		background-size: contain;
+	}
+	.landing-main{
+		grid-column-start: 3;
+		grid-column-end: span 17;
+		grid-row-start: 13;
+		grid-row-end: span 25;
+	}
+	.landing-main{
+		h1{
+			font-size: 3rem;
+		}
+		p{
+			width: 85%;
+		}
+	}
+	.landing-partners{
+		padding-bottom: 30px;
+	}
+}

@@ -4,6 +4,7 @@ import Search from "./components/Search";
 import CampgroundList from "./components/CampgroundList";
 import Footer from "./components/Footer";
 import Link from 'next/link';
+import styles from './camgrounds.module.scss';
 
 export default function Home() {
 	return (
@@ -13,7 +14,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Navbar />
-			<div className="hero-banner">
+			<div className={styles['hero-banner']}>
 				<h2 className="bold">Welcome to YelpCamp!</h2>
 				<p>View our hand-picked campgrounds from all over the world, or add your own.</p>
 				<Search/>
