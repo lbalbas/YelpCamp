@@ -8,29 +8,32 @@ export default function LogIn() {
 		<div className={styles.container}>
 			<div className={styles.col}>
 				<div className={styles.nav}>
-					<img src="" />
-					<Link href="/campgrounds"><a><img src=""/>Back to campgrounds</a></Link>
+					<img src="./Logo.svg"/>
+					<Link href="/campgrounds"><a>← Back to campgrounds</a></Link>
 				</div>
 				<div className={styles.login}>
-					<h1 className="bold">Start exploring camps from all around the world.</h1>
 					<form className={styles.form} action="">
+						<h1 className="bold">Start exploring camps from all around the world.</h1>
 						<label for="user">Username</label>
 						<input placeholder="johndoe_91" type="text"/>
 						<label for="password">Password</label>
 						<input placeholder="Enter your password" type="password"/>
 						<Button>Login</Button>
+						<span className="light-text">Not an user yet? <Link href="/signup"><a>Create an account</a></Link></span>
 					</form>
 				</div>	
 			</div>
 			<div className={styles.testimonial}>
 				<div>
-					<h2>"YelpCamp has honestly saved me hours of 
+					<h2>“YelpCamp has honestly saved me hours of 
 					research time, and the camps on here are definitely 
-					well picked and added"</h2>
-					<div>
-						<img src=""/>
-						<span>May Andrews</span>
-						<span>Professional Hiker</span>
+					well picked and added.”</h2>
+					<div className={styles.hiker}>
+						<img src="./User Testimonial.svg"/>
+						<div>
+							<p className="bold">May Andrews</p>
+							<p className="light-text reg-weight">Professional Hiker</p>
+						</div>
 					</div>
 				</div>
 			</div>
