@@ -7,7 +7,7 @@ export default function navbar() {
 	return (
 		<div className={styles.signin}>
 			<span className={styles.login}><Link href="/login">Login</Link></span>
-			<Button>Create an account</Button>
+			<Link href="/signup"><span><Button>Create an account</Button></span></Link>
 		</div>
 	)
 }
