@@ -24,7 +24,6 @@
 	flex-direction: column;
 	justify-content: center;
 	height: 85vh;
-	
 }
 .form{
 	display: flex;
@@ -41,6 +40,8 @@
 		color: #777370;
 		padding: 20px;
 		font-size: 1rem;
+		max-width: 500px;
+		box-sizing: border-box;
 	}
 	label{
 		color: #777370;
@@ -52,6 +53,7 @@
 	}
 	a{
 		text-align: center;
+		max-width: 500px;
 	}
 	span{
 		font-weight: 500;
@@ -62,21 +64,21 @@
 		}
 	}
 }
-.testimonial{
+.testimonialCont{
 	background-color: #f9f6f1;
 	display: grid;
 	place-items: center;
-	div{
-		width: 55%;
-		h2{
-			font-size: 24px;
-			line-height: 2.2rem;
-			font-weight: 700;
-		}
+}
+.testimonial{
+	width: 55%;
+	h2{
+		font-size: 24px;
+		line-height: 2.2rem;
+		font-weight: 700;
 	}
 }
+
 .hiker{
-	width: 100% !important;
 	display: flex;
 	align-items: center;
 	padding-top: 1.5rem;
@@ -89,4 +91,42 @@
 		}
 	}
 	
+}
+@media (max-width: 500px){
+	.container{
+		display: flex;
+		flex-direction: column;
+	}
+	.col{
+		width: 90%;
+		height: 100%;
+	}
+	.login{
+		height: 60vh;
+	}
+	.testimonialCont{
+		height: 33vh;
+	}
+	.hiker,.testimonial{
+		width: 90%;
+	}
+}
+@media (max-width: 1023px){
+	.container{
+		display: flex;
+		flex-direction: column;
+	}
+	.col{
+		width: 85%;
+		height: 100%;
+	}
+	.login{
+		height: 60vh;
+	}
+	.testimonialCont{
+		height: 33vh;
+	}
+	.hiker,.testimonial{
+		width: 85%;
+	}
 }

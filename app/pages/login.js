@@ -23,8 +23,8 @@ export default function LogIn() {
 					</form>
 				</div>	
 			</div>
-			<div className={styles.testimonial}>
-				<div>
+			<div className={styles.testimonialCont}>
+				<div className={styles.testimonial}>
 					<h2>“YelpCamp has honestly saved me hours of 
 					research time, and the camps on here are definitely 
 					well picked and added.”</h2>
