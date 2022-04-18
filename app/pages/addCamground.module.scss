@@ -1,0 +1,102 @@
+.campgroundForm{
+	width: 37%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	height: 650px;
+	color: #777370;
+	*{
+		box-sizing: border-box;
+	}
+	h1{
+		color: black;
+		font-size: 32px;
+		margin-bottom: 5px;
+	}
+	control{
+		display: flex;
+		flex-direction: column;
+		label{
+			padding-bottom: 10px;
+			font-weight: 500;
+		}
+		input,textarea{
+			background-color: #f7f7f7;
+			color: #777370;
+			border: none;
+			border-radius: 5px;
+			resize: none;
+			padding: 15px;
+			font-size: 1rem;
+		}
+		input::placeholder{ text-overflow:ellipsis; }
+	}
+	a{
+		text-align: center;
+	}
+}
+.commentForm{
+	width: 37%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	height: 400px;
+	margin-bottom: 100px;
+	color: #777370;
+	*{
+		box-sizing: border-box;
+	}
+	h1{
+		color: black;
+		font-size: 32px;
+		margin-bottom: 5px;
+	}
+	control{
+		display: flex;
+		flex-direction: column;
+		label{
+			padding-bottom: 10px;
+			font-weight: 500;
+		}
+		input,textarea{
+			background-color: #f7f7f7;
+			color: #777370;
+			border: none;
+			border-radius: 5px;
+			resize: none;
+			padding: 15px;
+			font-size: 1rem;
+			line-height: 1.4rem;
+		}
+		input::placeholder{ text-overflow:ellipsis; }
+	}
+	a{
+		text-align: center;
+	}
+}
+.addComment{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
+}
+
+@media (max-width: 500px){
+	.campgroundForm,.commentForm{
+		width: 90%;
+	}
+	.addComment{
+		display: block;
+	}
+}
+@media (min-width: 500px) and (max-width: 1023px){
+	.campgroundForm,.commentForm{
+		margin: 0 0 0 2rem;
+		width: 70%;
+	}
+	.addComment{
+		display: block;
+	}
+}
