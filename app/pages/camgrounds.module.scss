@@ -1,4 +1,5 @@
 $light-text : #777370;
+s
 .hero-banner{
 	background-color: #f9f6f1;
 	border-radius: 5px;
@@ -13,6 +14,7 @@ $light-text : #777370;
 		font-weight: 500;
 	}
 }
+
 @media (max-width: 500px){
 	.hero-banner{
 		background-color: #f9f6f1;
