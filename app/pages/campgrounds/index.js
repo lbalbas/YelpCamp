@@ -1,8 +1,8 @@
 import Head from "next/head";
-import Navbar from "./components/Navbar";
-import Search from "./components/Search";
-import CampgroundList from "./components/CampgroundList";
-import Footer from "./components/Footer";
+import Navbar from "../components/Navbar";
+import Search from "../components/Search";
+import CampgroundList from "../components/CampgroundList";
+import Footer from "../components/Footer";
 import Link from 'next/link';
 import styles from './camgrounds.module.scss';
 
