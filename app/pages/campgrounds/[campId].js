@@ -38,6 +38,7 @@ export default function Campground() {
 	  		</div>
 	  		<Comments/>
 	  		<div className={styles.map}>
+	  			<img src="Map.png"/>
 	  		</div>
 	  	</div>
 	  	<Footer/>
