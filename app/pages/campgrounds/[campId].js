@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Comments from "../components/Comments.js";
 import Footer from "../components/Footer";
 import Link from 'next/link';
-import styles from './camgrounds.module.scss';
+import styles from './[campId].module.scss';
 import { useRouter } from 'next/router'
 import React,{useState,useEffect} from 'react';
 
@@ -38,7 +38,7 @@ export default function Campground() {
 	  		</div>
 	  		<Comments/>
 	  		<div className={styles.map}>
-	  			<img src="Map.png"/>
+	  			<img src="/Map.png"/>
 	  		</div>
 	  	</div>
 	  	<Footer/>
