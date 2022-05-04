@@ -74,3 +74,42 @@
 	color: #777370;
 	font-weight: 500;
 }
+@media (max-width: 500px){
+	.container{
+		display: flex;
+		width: 90%;
+		flex-direction: column;
+	}
+	.campInfo{
+		padding: 2rem;
+	}
+	.commentList{
+		padding: 2rem;
+		align-items: flex-start;
+	}
+	.map{
+		padding: 2rem;
+		img{
+			width: 100%;
+		}
+	}
+}
+@media (min-width: 500px) and (max-width: 1023px){
+	.container{
+		display: flex;
+		width: 90%;
+		flex-direction: column;
+	}
+	.campInfo{
+		padding: 3rem;
+	}
+	.commentList{
+		padding: 3rem;
+		align-items: flex-start;
+	}
+	.map{
+		padding: 3rem;
+		display: flex;
+		justify-content: center;
+	}
+}
