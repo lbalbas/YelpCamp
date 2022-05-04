@@ -28,17 +28,19 @@ export default function Campground() {
 	  	<Navbar/>
 	  	<div className={styles.container}>
 	  		<div className={styles.campInfo}>
-	  			<img src="/Camp Images/Compressed Images/Mount Ulap.jpg"/>
+	  			<img src="/Camp Images/High Quality Images/Mount Ulap.png"/>
 	  			<div>
 	  				<h1>{campgroundData.name}</h1>
 	  				<span>{campgroundData.price}</span>
 	  			</div>
 	  			<p>{campgroundData.desc}</p>
-	  			<span>Submitted by {campgroundData.submitter}</span>
+	  			<span><i>Submitted by {campgroundData.submitter}</i></span>
 	  		</div>
-	  		<Comments/>
-	  		<div className={styles.map}>
-	  			<img src="/Map.png"/>
+	  		<Comments className={styles.comment}/>
+	  		<div className={styles.sidebar}>
+	  			<div className={styles.map}>
+	  				<img src="/Map.png"/>
+	  			</div>
 	  		</div>
 	  	</div>
 	  	<Footer/>
