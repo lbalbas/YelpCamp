@@ -12,10 +12,13 @@
     "challenge",
     "backend"
   ],
+  "type": "module",
   "author": "Luis Balbás",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "mongodb": "^4.5.0",
     "mongoose": "^6.2.5"
   },
   "devDependencies": {
