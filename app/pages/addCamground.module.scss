@@ -75,9 +75,24 @@
 	}
 	a{
 		text-align: center;
+		input{
+			color: inherit;
+		}
 	}
 }
-
+.submit{
+	background-color: black;
+	display: inline-block;
+	text-decoration: none;
+	border: none;
+	border-radius: 5px;
+	color: white !important;
+	cursor: pointer;
+	font-weight: 600;
+	padding: 20px 0;
+	box-sizing: border-box;
+	font-size: 1rem;
+}
 .addComment{
 	display: flex;
 	flex-direction: column;

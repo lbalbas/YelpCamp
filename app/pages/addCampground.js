@@ -5,11 +5,12 @@ import Button from './components/Button.js'
 import Link from 'next/Link';
 import styles from './addCamground.module.scss';
 
-export default function navbar() {
+export default function addCampground() {
+	console.log(process.env.NEXT_PUBLIC_API_URI);
 	return (
 		<div>
 			<Navbar />
-			<form className={styles.campgroundForm}>
+			<form action={process.env.NEXT_PUBLIC_API_URI + "/addCampground"} method="post" className={styles.campgroundForm}>
 				<h1 className="bold">Add New Campground</h1>
 				<control>
 						<label for="name">Campground Name</label>
@@ -28,7 +29,7 @@ export default function navbar() {
 						<label for="description">Description</label>
 						<textarea rows="5" cols="80" name="description" placeholder="Seven Sisters Waterfall" type="textbox"/>
 				</control>
-				<Button>Add Campground</Button>
+				<input className={styles.submit} placeholder="Add Campground" type="submit"/>
 			</form>
 			<Footer/>
 		</div>
