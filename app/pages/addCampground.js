@@ -6,7 +6,6 @@ import Link from 'next/Link';
 import styles from './addCamground.module.scss';
 
 export default function addCampground() {
-	console.log(process.env.NEXT_PUBLIC_API_URI);
 	return (
 		<div>
 			<Navbar />
@@ -14,20 +13,20 @@ export default function addCampground() {
 				<h1 className="bold">Add New Campground</h1>
 				<control>
 						<label htmlFor="name">Campground Name</label>
-						<input name="name" placeholder="Seven Sisters Waterfall" type="text"/>
+						<input required name="name" placeholder="Seven Sisters Waterfall" type="text"/>
 				</control>
 				<control>
 						<label htmlFor="price">Price</label>
-						<input name="price" placeholder="$149" type="text"/>
+						<input required name="price" placeholder="$149" type="text"/>
 				</control>
 				<control>
 						<label htmlFor="name">Image</label>
-						<input name="image" placeholder="www.thepinoytraveler.com/2018/01/mt-ulap-diy-dayhike.html" 
+						<input required name="image" placeholder="www.thepinoytraveler.com/2018/01/mt-ulap-diy-dayhike.html" 
 				type="text"/>
 				</control>
 				<control>
 						<label htmlFor="description">Description</label>
-						<textarea rows="5" cols="80" name="description" placeholder="Seven Sisters Waterfall" type="textbox"/>
+						<textarea required rows="5" cols="80" name="description" placeholder="Seven Sisters Waterfall" type="textbox"/>
 				</control>
 				<input className={styles.submit} placeholder="Add Campground" type="submit"/>
 			</form>
