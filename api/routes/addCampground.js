@@ -1,5 +1,5 @@
 import express from 'express'
-import client from '../db.js';
+import database from '../db.js';
 
 const addCampgroundRoute = express.Router()
 
@@ -10,12 +10,15 @@ addCampgroundRoute.post('/', (req,res)=>{
       image: req.body.image,
       desc: req.body.desc,
   };
-  client.connect(async (err) => {
+  /*client.connect(async (err) => {
     const collection = client.db("yelpCamp").collection("campgrounds");
     const result = await collection.insertOne(camp);
     client.close();
-    res.status(201).send()
-  }) 
-})
-
+    res.status(201).send()*/
+  
+  database(async (db) => {
+    const query = await db.collection("campgrounds").insertOne(camp);
+    res.status(201).send();
+  })
+}) 
 export default addCampgroundRoute;
