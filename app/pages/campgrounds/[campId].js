@@ -14,7 +14,6 @@ export default function Campground() {
   const { campId } = router.query
 
   useEffect(()=>{
-  	console.log(campId);
   	setCampgroundData({
   		name: "Mount Ulap", 
   		desc: "Mount Ulap is a 7.7 kilometer moderately traffiked point-to-point trail located near Tuba, Benguet, Philipines that offers the chance to see wildlife and is rated as moderate. The trail is primarily used for hiking.",
