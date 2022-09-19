@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar.js'
 import Footer from './components/Footer.js'
 import Button from './components/Button.js'
-import Link from 'next/Link';
+import Link from 'next/link';
 import styles from './addCamground.module.scss';
 
 export default function addComment() {

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Button from "./components/Button";
-import Link from 'next/Link';
+import Link from 'next/link';
 import styles from './login.module.scss';
 
 export default function LogIn() {

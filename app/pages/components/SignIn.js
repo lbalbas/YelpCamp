@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from './Button.js'
-import Link from 'next/Link';
+import Link from 'next/link';
 import styles from './SignIn.module.scss'
 
 export default function navbar() {
