@@ -5,48 +5,12 @@ import Link from 'next/link';
 import axios from 'axios';
 
 export default function camgroundlist() {
-	const [campgrounds, setCampgrounds] = useState([{
-		thumbnail: "/Camp Images/Compressed Images/Buloy Springs.jpg",
-		hqimage: "/High Quality Images/Buloy Springs.png",
-		name: "Buloy Springs",
-		desc: "This is one of the best beach camping sites, beautiful and pristine.",
-		id: 1,
-	},{
-		thumbnail: "/Camp Images/Compressed Images/Buloy Springs.jpg",
-		hqimage: "/Camp Images/Buloy Springs.png",
-		name: "Buloy Springs",
-		desc: "This is one of the best beach camping sites, beautiful and pristine.",
-		id: 2,
-	},{
-		thumbnail: "/Camp Images/Compressed Images/Buloy Springs.jpg",
-		hqimage: "/Camp Images/High Quality Images/Buloy Springs.png",
-		name: "Buloy Springs",
-		desc: "This is one of the best beach camping sites, beautiful and pristine.",
-		id: 3,
-	},{
-		thumbnail: "/Camp Images/Compressed Images/Buloy Springs.jpg",
-		hqimage: "/Camp Images/High Quality Images/Buloy Springs.png",
-		name: "Buloy Springs",
-		desc: "This is one of the best beach camping sites, beautiful and pristine.",
-		id: 4,
-	},{
-		thumbnail: "/Camp Images/Compressed Images/Buloy Springs.jpg",
-		hqimage: "/Camp Images/High Quality Images/Buloy Springs.png",
-		name: "Buloy Springs",
-		desc: "This is one of the best beach camping sites, beautiful and pristine.",
-		id: 5,
-	},{
-		thumbnail: "/Camp Images/Compressed Images/Buloy Springs.jpg",
-		hqimage: "/Camp Images/High Quality Images/Buloy Springs.png",
-		name: "Buloy Springs",
-		desc: "This is one of the best beach camping sites, beautiful and pristine.",
-		id: 6,
-	},])
+	const [campgrounds, setCampgrounds] = useState([])
 	
 	useEffect(() => {
 		axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 		axios.get(process.env.NEXT_PUBLIC_API_URI + "/getCampgrounds").then((response)=>{
-			setCampgrounds(campgrounds.concat(response.data))
+			setCampgrounds(response.data)
 		}).catch(function (error) {
 	    if (error.response) {
 	      // The request was made and the server responded with a status code
@@ -70,12 +34,12 @@ export default function camgroundlist() {
 	let campgroundList = campgrounds.map((camp)=> {
 		return (
 			<div key={camp.id} className={styles.campground}>
-				<img src={camp.thumbnail} />
+				<img src={camp.image} />
 				<div className={styles.campDesc}>
 					<h3 className="bold">{camp.name}</h3>
 					<p>{camp.desc}</p>	
 				</div>
-				<Link passHref href={"/campgrounds/" + camp.id}>
+				<Link passHref href={"/campgrounds/" + camp._id}>
 						<Button>View Campground</Button>
 				</Link>
 			</div>
