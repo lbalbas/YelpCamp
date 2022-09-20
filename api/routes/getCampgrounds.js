@@ -1,6 +1,6 @@
 import express from 'express'
 import database from '../db.js';
-
+import {ObjectID} from 'mongodb'
 const getCampgroundsRoute = express.Router();
 
 getCampgroundsRoute.get('/', async (req, res)=>{
@@ -8,9 +8,8 @@ getCampgroundsRoute.get('/', async (req, res)=>{
 		var query = {};
 
 		if(req.query.id){
-			query = {"_id" : req.query.id};
+			query = {"_id" : new ObjectID(req.query.id)};
 		}
-
 		const sort = { name: 1,};
 	    const cursor = await db.collection("campgrounds").find(query).sort(sort);
 		
