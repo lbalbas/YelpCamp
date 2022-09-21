@@ -4,11 +4,14 @@ import Button from './Button.js';
 import Link from 'next/link';
 import axios from 'axios';
 
+axios.defaults.headers.get['Access-Control-Allow-Origin'] = 'http://localhost:3001';
+axios.defaults.withCredentials = true;
+
 export default function camgroundlist() {
 	const [campgrounds, setCampgrounds] = useState([])
 	
 	useEffect(() => {
-		axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+		axios.get(process.env.NEXT_PUBLIC_API_URI + "/auth");
 		axios.get(process.env.NEXT_PUBLIC_API_URI + "/getCampgrounds").then((response)=>{
 			setCampgrounds(response.data)
 		}).catch(function (error) {
@@ -33,7 +36,7 @@ export default function camgroundlist() {
 
 	let campgroundList = campgrounds.map((camp)=> {
 		return (
-			<div key={camp.id} className={styles.campground}>
+			<div key={camp._id} className={styles.campground}>
 				<img src={camp.image} />
 				<div className={styles.campDesc}>
 					<h3 className="bold">{camp.name}</h3>
