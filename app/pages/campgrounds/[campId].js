@@ -6,21 +6,41 @@ import Link from 'next/link';
 import styles from './[campId].module.scss';
 import { useRouter } from 'next/router'
 import React,{useState,useEffect} from 'react';
+import axios from 'axios';
+
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
 export default function Campground() {
   const [campgroundData, setCampgroundData] = useState({
-  })
-  const router = useRouter()
-  const { campId } = router.query
+  });
+  const router = useRouter();
+  const campId = router.query.campId;
 
   useEffect(()=>{
-  	setCampgroundData({
-  		name: "Mount Ulap", 
-  		desc: "Mount Ulap is a 7.7 kilometer moderately traffiked point-to-point trail located near Tuba, Benguet, Philipines that offers the chance to see wildlife and is rated as moderate. The trail is primarily used for hiking.",
-  		price: "$104.99/night",
-  		submitter: "Andrew Mike",
-  	});
-  },[])
+  	if(campId){
+  		
+			axios.get(process.env.NEXT_PUBLIC_API_URI + `/getCampgrounds?id=${campId}`).then((response)=>{
+					setCampgroundData(response.data[0])
+				}).catch(function (error) {
+			    if (error.response) {
+			      // The request was made and the server responded with a status code
+			      // that falls out of the range of 2xx
+			      console.log(error.response.data);
+			      console.log(error.response.status);
+			      console.log(error.response.headers);
+			    } else if (error.request) {
+			      // The request was made but no response was received
+			      // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+			      // http.ClientRequest in node.js
+			      console.log(error.request);
+			    } else {
+			      // Something happened in setting up the request that triggered an Error
+			      console.log('Error', error.message);
+			    }
+			    console.log(error.config);
+			  });
+  	}
+  },[router])
 
   return (
   	<div>
