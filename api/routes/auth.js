@@ -1,33 +1,42 @@
 import express from 'express'
 import database from '../db.js'
+import md5 from 'md5';
 
 const authRoute = express.Router()
 
 authRoute.get('/',(req,res)=>{
+    console.log(req)
     res.status(200).send()
 })
 
 authRoute.post('/login',async (req,res) => login(req,res))
 
 authRoute.post('/signup',(req,res)=>{
-    const { username, password } = req.body;
+    const { username } = req.body;
+    const password = md5(req.body.password);
 
     database(async (db) => {
         const query = {'username' : username};
         const count = await db.collection("users").countDocuments(query);
-
         if(count)
             return res.status(409).json({message: "User already exists"})
-
         const cursor = await db.collection("users").insertOne({username: username, password: password});
-
-        login(res, req);
+        login(req, res);
     },res)
 })
 
 function login(req, res){
-    
+    console.log("4")
+    database(async (db) => {
+        const cursor = await db.collection("users").find({'username' : req.body.username});
+        let user = await cursor.toArray();
+        user = user[0];
 
-	return
+        if(user.username == req.body.username && md5(req.body.password) == user.password){
+           res.cookie('session',user.username, { maxAge: 604800, httpOnly: true, secure: true })
+           return res.status(200).json({status: 200, msg: "Now Logged In"}); 
+        }
+        return res.status(401).json({status: 401,msg: "Wrong Credentials"});
+    },res)
 }
 export default authRoute;

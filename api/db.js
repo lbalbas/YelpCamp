@@ -19,3 +19,13 @@ const database =  async(operations, response) => {
 }
 
 export default database;
+
+export function checkSession(user){
+	if(user){
+	 	database(async (db)=>{
+			let count = await db.collection("users").countDocuments({username:user})
+			return count == 1 ? true : false
+		})
+	}
+	return false;
+}
