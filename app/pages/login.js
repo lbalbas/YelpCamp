@@ -1,9 +1,29 @@
+import React, { useState } from 'react';
 import Head from "next/head";
 import Button from "./components/Button";
 import Link from 'next/link';
 import styles from './login.module.scss';
+import axios from 'axios';
+import Router from 'next/router';
 
 export default function LogIn() {
+	const [username, setUsername] = useState("");
+	const [password, setPassword] = useState("");
+
+	function sendLogin(e){
+		e.preventDefault();
+		axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+		axios.post(process.env.NEXT_PUBLIC_API_URI + "/auth/login", {
+	    	'username': username,
+	    	'password': password,
+	  })
+	  .then(function (response) {
+	    Router.push('/campgrounds')
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	  });
+	}
 	return(
 		<div className={styles.container}>
 			<div className={styles.col}>
@@ -12,13 +32,13 @@ export default function LogIn() {
 					<Link href="/campgrounds"><a>← Back to campgrounds</a></Link>
 				</div>
 				<div className={styles.login}>
-					<form className={styles.form} action="">
+					<form onSubmit={(e)=>sendLogin(e)} className={styles.form} method="post">
 						<h1 className="bold">Start exploring camps from all around the world.</h1>
 						<label for="user">Username</label>
-						<input placeholder="johndoe_91" type="text"/>
+						<input onKeyUp={(e)=> setUsername(e.target.value)} required placeholder="johndoe_91" type="text"/>
 						<label for="password">Password</label>
-						<input placeholder="Enter your password" type="password"/>
-						<Button>Login</Button>
+						<input onKeyUp={(e)=> setPassword(e.target.value)} required placeholder="Enter your password" type="password"/>
+						<input type="submit" value="Login" className={styles.submit}/>
 						<span className="light-text">Not an user yet? <Link href="/signup"><a>Create an account</a></Link></span>
 					</form>
 				</div>	

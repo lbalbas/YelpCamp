@@ -64,6 +64,19 @@
 		}
 	}
 }
+.submit{
+	background-color: black !important;
+	display: inline-block;
+	text-decoration: none;
+	border: none;
+	border-radius: 5px;
+	color: white !important;
+	cursor: pointer;
+	font-weight: 600;
+	padding: 20px 0;
+	box-sizing: border-box;
+	font-size: 1rem;
+}
 .testimonialCont{
 	background-color: #f9f6f1;
 	display: grid;

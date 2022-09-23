@@ -1,9 +1,30 @@
+import React, { useState } from 'react';
 import Head from "next/head";
 import Button from "./components/Button";
 import Link from 'next/link';
 import styles from './login.module.scss';
+import Router from 'next/router'
+import axios from 'axios';
 
-export default function LogIn() {
+export default function SignUp() {
+	const [username, setUsername] = useState("");
+	const [password, setPassword] = useState("");
+
+	function sendSignUp(e){
+		e.preventDefault();
+		axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+		axios.post(process.env.NEXT_PUBLIC_API_URI + "/auth/signup", {
+	    	'username': username,
+	    	'password': password,
+	  })
+	  .then(function (response) {
+	    Router.push('/campgrounds')
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	  });
+	}
+
 	return(
 		<div className={styles.container}>
 			<div className={styles.col}>
@@ -12,13 +33,13 @@ export default function LogIn() {
 					<Link href="/campgrounds"><a>← Back to campgrounds</a></Link>
 				</div>
 				<div className={styles.login}>
-					<form className={styles.form} action="">
+					<form onSubmit={(e)=>sendSignUp(e)} className={styles.form} action="">
 						<h1 className="bold">Start exploring camps from all around the world.</h1>
-						<label for="user">Username</label>
-						<input placeholder="johndoe_91" type="text"/>
-						<label for="password">Password</label>
-						<input placeholder="Choose password" type="password"/>
-						<Button>Create an account</Button>
+						<label htmlFor="user">Username</label>
+						<input onKeyUp={(e)=> setUsername(e.target.value)} required placeholder="johndoe_91" type="text"/>
+						<label htmlFor="password">Password</label>
+						<input onKeyUp={(e)=> setPassword(e.target.value)} required placeholder="Choose password" type="password"/>
+						<input type="submit" value="Sign Up" className={styles.submit}/>
 						<span className="light-text">Already an user? <Link href="/login"><a>Sign in</a></Link></span>
 					</form>
 				</div>	

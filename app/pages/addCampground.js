@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar.js'
 import Footer from './components/Footer.js'
 import Button from './components/Button.js'
+import Router from 'next/router';
 import Link from 'next/link';
 import styles from './addCamground.module.scss';
 import axios from 'axios';
@@ -22,7 +23,7 @@ export default function addCampground() {
 	    desc: campDesc,
 	  })
 	  .then(function (response) {
-	    console.log(response);
+	    Router.push('/campgrounds')
 	  })
 	  .catch(function (error) {
 	    console.log(error);
@@ -32,7 +33,7 @@ export default function addCampground() {
 	return (
 		<div>
 			<Navbar />
-			<form method="post" className={styles.campgroundForm}>
+			<form onSubmit={e => sendForm(e)} method="post" className={styles.campgroundForm}>
 				<h1 className="bold">Add New Campground</h1>
 				<control>
 						<label htmlFor="name">Campground Name</label>
@@ -51,8 +52,8 @@ export default function addCampground() {
 						<label htmlFor="description">Description</label>
 						<textarea onKeyUp={(e)=> setDesc(e.target.value)} required rows="5" cols="80" name="description" placeholder="Seven Sisters Waterfall" type="textbox"/>
 				</control>
-				<a onClick={e => sendForm(e)} type="button"  className={styles.submit}>Submit</a>
-				</form>
+				<input type="submit" value="Submit" className={styles.submit}/>
+			</form>
 			<Footer/>
 		</div>
 	)
