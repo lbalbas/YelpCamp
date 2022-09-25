@@ -5,7 +5,6 @@ import md5 from 'md5';
 const authRoute = express.Router()
 
 authRoute.get('/',(req,res)=>{
-    console.log(req)
     res.status(200).send()
 })
 
@@ -26,7 +25,6 @@ authRoute.post('/signup',(req,res)=>{
 })
 
 function login(req, res){
-    console.log("4")
     database(async (db) => {
         const cursor = await db.collection("users").find({'username' : req.body.username});
         let user = await cursor.toArray();
