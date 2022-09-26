@@ -5,10 +5,12 @@ import Link from 'next/link';
 import styles from './login.module.scss';
 import axios from 'axios';
 import Router from 'next/router';
+import { useAuthContext } from './lib/authContext.js'
 
 export default function LogIn() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
+	const {auth, setAuthStatus} = useAuthContext();
 
 	function sendLogin(e){
 		e.preventDefault();
@@ -18,7 +20,11 @@ export default function LogIn() {
 	    	'password': password,
 	  })
 	  .then(function (response) {
-	    Router.push('/campgrounds')
+	  	if (response.status == 200){
+	  		setAuthStatus({loggedIn: true, user: response.user})
+	    	return Router.push('/campgrounds')
+	  	}
+	  	//Do something about wrong credentials
 	  })
 	  .catch(function (error) {
 	    console.log(error);

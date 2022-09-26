@@ -14,7 +14,7 @@ addCampgroundRoute.post('/', (req,res)=>{
   };
   
   database(async (db) => {
-    if(checkSession(req.cookies.session)){
+    if(checkSession(req.cookies.session,res)){
       const query = await db.collection("campgrounds").insertOne(camp);
       return res.status(201).send();
     }

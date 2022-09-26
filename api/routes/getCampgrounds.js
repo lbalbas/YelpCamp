@@ -3,7 +3,7 @@ import database from '../db.js';
 import {ObjectID} from 'mongodb'
 const getCampgroundsRoute = express.Router();
 
-getCampgroundsRoute.get('/', async (req, res)=>{
+getCampgroundsRoute.get('/', (req, res)=>{
 	database(async (db) => {
 		var query = {};
 
@@ -15,10 +15,10 @@ getCampgroundsRoute.get('/', async (req, res)=>{
 		
 		if(cursor){
 			const campgrounds = await cursor.toArray();
-			return res.status(200).json(campgrounds);
+			return res.status(200).json(campgrounds).end();
+		}else{
+			return res.status(404).json({msg: "Couldn't find any campgrounds"}).end();
 		}
-
-		return res.status(404).json({msg: "Couldn't find any campgrounds"});
   	},res)	
 })	
 

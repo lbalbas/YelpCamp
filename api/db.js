@@ -11,21 +11,23 @@ const database =  async(operations, response) => {
 			serverApi: ServerApiVersion.v1 
 		});
 		const db = client.db("yelpCamp");
+		console.log(operations)
 		await operations(db);
-		client.close();
+		return client.close();
 	}catch(error){
-		response.status(500).json({message: "Couldn't connect to Database", error});
+		console.log(error)
+		return response.status(500).json({message: "Couldn't connect to Database", error}).end();
 	}
 }
 
 export default database;
 
-export function checkSession(user){
+export function checkSession(user,res){
 	if(user){
 	 	database(async (db)=>{
 			let count = await db.collection("users").countDocuments({username:user})
 			return count == 1 ? true : false
-		})
+		},res)
 	}
 	return false;
 }

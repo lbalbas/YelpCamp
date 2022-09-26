@@ -6,13 +6,10 @@ import axios from 'axios';
 
 axios.defaults.headers.get['Access-Control-Allow-Origin'] = 'http://localhost:3001';
 axios.defaults.withCredentials = true;
-axios.get(process.env.NEXT_PUBLIC_API_URI + "/auth");
 
 export default function camgroundlist() {
 
 	const [campgrounds, setCampgrounds] = useState([])
-	
-	
 
 	useEffect(() => {
 		axios.get(process.env.NEXT_PUBLIC_API_URI + "/getCampgrounds").then((response)=>{
