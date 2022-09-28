@@ -4,7 +4,7 @@ import md5 from 'md5';
 import checkSession from '../db.js';
 const authRoute = express.Router()
 
-authRoute.get('/', (req,res)=>{
+authRoute.get('/', async (req,res)=>{
     let authCheck = checkSession(req.cookies.session, res);
     if(authCheck)
         return res.status(200).end()
