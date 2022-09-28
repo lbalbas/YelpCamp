@@ -15,11 +15,11 @@ export const AuthProvider = ({ children }) => {
   const [auth, setAuthStatus] = useState({loggedIn: false, user: undefined,})
   
   useEffect(()=>{
-    axios.defaults.headers.get['Access-Control-Allow-Origin'] = 'http://localhost:3001';
+    axios.defaults.headers['Access-Control-Allow-Origin'] = 'http://localhost:3001';
     axios.defaults.withCredentials = true;
     axios.get(process.env.NEXT_PUBLIC_API_URI + "/auth").then((response)=>{
       if(response.status == 200)
-        setAuthStatus({loggedIn: true , user: response.user });
+        setAuthStatus({loggedIn: true , user: response.data.user });
     }).catch(function (error) {
         console.log(error);
     })

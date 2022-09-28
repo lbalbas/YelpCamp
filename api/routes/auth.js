@@ -5,9 +5,12 @@ import checkSession from '../db.js';
 const authRoute = express.Router()
 
 authRoute.get('/', async (req,res)=>{
-    let authCheck = checkSession(req.cookies.session, res);
-    if(authCheck)
-        return res.status(200).end()
+    if(req.cookies.session != undefined){
+        let authCheck = checkSession(req.cookies.session, res);
+        if(authCheck)
+            return res.status(200).json({status: 200, user: req.cookies.session,}).end()
+    }else
+        return res.status(401)
 })
 
 authRoute.post('/login',async (req,res) => login(req,res))

@@ -17,7 +17,8 @@ export default function navbar() {
 	}else{
 		return (
 			<div className={styles.signin}>
-				<span className={styles.login}>{auth.user}</span>
+				<span><strong>{auth.user}</strong></span>
+				<span className={styles.login}>Logout</span>
 			</div>
 			)
 	}

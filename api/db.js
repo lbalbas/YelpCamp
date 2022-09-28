@@ -11,7 +11,6 @@ const database =  async(operations, response) => {
 			serverApi: ServerApiVersion.v1 
 		});
 		const db = client.db("yelpCamp");
-		console.log(operations)
 		await operations(db)
 		return client.close()
 	}catch(error){
@@ -25,20 +24,17 @@ const database =  async(operations, response) => {
 export default database;
 
 export const checkSession = async(user,res) => {
-	if(user){
-	 		try{
-	 			const client = await MongoClient.connect(url,{ 
+	try{
+	 	const client = await MongoClient.connect(url,{ 
 					useNewUrlParser: true, 
 					useUnifiedTopology: true, 
 					serverApi: ServerApiVersion.v1 
 				});
-				const db = client.db("yelpCamp");
-				let count = await db.collection("users").countDocuments({username:user})
-				return count == 1 ? true : false
-			}catch(error){
-				console.log(error);
-				return response.status(500).json({message: "Couldn't connect to Database", error});
-			}
+		const db = client.db("yelpCamp");
+		let count = await db.collection("users").countDocuments({username:user})
+		return count == 1 ? true : false
+	}catch(error){
+		console.log(error);
+		return response.status(500).json({message: "Couldn't connect to Database", error});
 	}
-	return false;
 }

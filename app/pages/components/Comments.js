@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link';
 import styles from "../campgrounds/[campId].module.scss";
 import Button from "./Button.js";
 
@@ -35,7 +36,7 @@ export default function button(props) {
 					out how to get there but it was amazing!
 				</p>
 			</div>
-			<Button><img src="/Chat Bubble.svg"/>Leave a review</Button>
+			<Link href="/addComment"><Button><img src="/Chat Bubble.svg"/>Leave a review</Button></Link>
 		</div>
 	);
 }
