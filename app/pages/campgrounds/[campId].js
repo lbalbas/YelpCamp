@@ -55,7 +55,7 @@ export default function Campground() {
 	  			<p>{campgroundData.desc}</p>
 	  			<span><i>Submitted by {campgroundData.submitter}</i></span>
 	  		</div>
-	  		<Comments className={styles.comment}/>
+	  		<Comments id={campId} className={styles.comment}/>
 	  		<div className={styles.sidebar}>
 	  			<div className={styles.map}>
 	  				<img src="/Map.png"/>

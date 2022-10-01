@@ -15,7 +15,8 @@ export default function addCampground() {
 
 	function sendForm(e){
 		e.preventDefault();
-		axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+    	axios.defaults.headers['Access-Control-Allow-Origin'] = 'http://localhost:3001';
+    	axios.defaults.withCredentials = true;
 		axios.post(process.env.NEXT_PUBLIC_API_URI + "/addCampground", {
 	    name: campName,
 	    price: campPrice,

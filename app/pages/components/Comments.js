@@ -36,7 +36,7 @@ export default function button(props) {
 					out how to get there but it was amazing!
 				</p>
 			</div>
-			<Link href="/addComment"><Button><img src="/Chat Bubble.svg"/>Leave a review</Button></Link>
+			<Link href={"/addComment?id=" + props.id}><Button><img src="/Chat Bubble.svg"/>Leave a review</Button></Link>
 		</div>
 	);
 }
