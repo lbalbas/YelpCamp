@@ -32,6 +32,10 @@ export default function LogIn() {
 	}
 	return(
 		<div className={styles.container}>
+		<Head>
+				<title>Yelp Camp | Log In</title>
+				<link rel="icon" href="/favicon.ico" />
+		</Head>
 			<div className={styles.col}>
 				<div className={styles.nav}>
 					<img src="./Logo.svg"/>

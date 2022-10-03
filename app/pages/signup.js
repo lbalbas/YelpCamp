@@ -27,6 +27,10 @@ export default function SignUp() {
 
 	return(
 		<div className={styles.container}>
+			<Head>
+				<title>Yelp Camp | Sign Up</title>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
 			<div className={styles.col}>
 				<div className={styles.nav}>
 					<img src="./Logo.svg"/>

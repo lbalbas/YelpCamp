@@ -44,10 +44,14 @@ export default function Campground() {
 
   return (
   	<div>
+  		<Head>
+				<title>Yelp Camp | {campgroundData.name}</title>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
 	  	<Navbar/>
 	  	<div className={styles.container}>
 	  		<div className={styles.campInfo}>
-	  			<img src="/Camp Images/High Quality Images/Mount Ulap.png"/>
+	  			<img src={campgroundData.image}/>
 	  			<div>
 	  				<h1>{campgroundData.name}</h1>
 	  				<span>{campgroundData.price}</span>

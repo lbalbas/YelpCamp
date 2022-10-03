@@ -29,6 +29,11 @@ authRoute.post('/signup',(req,res)=>{
     },res)
 })
 
+authRoute.get('/logout', (req,res) => {
+    res.clearCookie("session");
+    res.status(200).json({msg: "Logged Out"})
+})
+
 function login(req, res){
     database(async (db) => {
         const cursor = await db.collection("users").find({'username' : req.body.username});

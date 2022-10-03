@@ -31,6 +31,10 @@ export default function addComment() {
 	return (
 		<div className={styles.addComment}>
 		<Navbar />
+		<Head>
+				<title>Yelp Camp | Add Comment</title>
+				<link rel="icon" href="/favicon.ico" />
+		</Head>
 		<form onSubmit={(e)=>sendForm(e)} action={process.env.NEXT_PUBLIC_API_URI + "/addComment"} method="post" className={styles.commentForm}>
 			<h1 className="bold">Add New Comment</h1>
 			<control>

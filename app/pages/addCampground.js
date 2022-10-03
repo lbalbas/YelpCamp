@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Head from "next/head";
 import Navbar from './components/Navbar.js'
 import Footer from './components/Footer.js'
 import Button from './components/Button.js'
@@ -33,6 +34,10 @@ export default function addCampground() {
 
 	return (
 		<div>
+			<Head>
+				<title>Yelp Camp | Add Campground</title>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
 			<Navbar />
 			<form onSubmit={e => sendForm(e)} method="post" className={styles.campgroundForm}>
 				<h1 className="bold">Add New Campground</h1>
