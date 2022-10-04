@@ -44,9 +44,9 @@ export default function LogIn() {
 				<div className={styles.login}>
 					<form onSubmit={(e)=>sendLogin(e)} className={styles.form} method="post">
 						<h1 className="bold">Start exploring camps from all around the world.</h1>
-						<label for="user">Username</label>
+						<label htmlFor="user">Username</label>
 						<input onKeyUp={(e)=> setUsername(e.target.value)} required placeholder="johndoe_91" type="text"/>
-						<label for="password">Password</label>
+						<label htmlFor="password">Password</label>
 						<input onKeyUp={(e)=> setPassword(e.target.value)} required placeholder="Enter your password" type="password"/>
 						<input type="submit" value="Login" className={styles.submit}/>
 						<span className="light-text">Not an user yet? <Link href="/signup"><a>Create an account</a></Link></span>
