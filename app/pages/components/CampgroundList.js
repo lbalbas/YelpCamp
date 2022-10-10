@@ -7,7 +7,7 @@ import axios from 'axios';
 axios.defaults.headers.get['Access-Control-Allow-Origin'] = 'http://localhost:3001';
 axios.defaults.withCredentials = true;
 
-export default function camgroundlist() {
+export default function camgroundlist(props) {
 
 	const [campgrounds, setCampgrounds] = useState([])
 
@@ -34,7 +34,7 @@ export default function camgroundlist() {
 	  });
 	}, []);
 
-	let campgroundList = campgrounds.map((camp)=> {
+	let campgroundList = campgrounds.filter(camp => camp.name.toLowerCase().includes(props.filter.toLowerCase())).map((camp)=> {
 		return (
 			<div key={camp._id} className={styles.campground}>
 				<img src={camp.image} />

@@ -4,7 +4,7 @@ import Button from './Button.js'
 import Link from 'next/link';
 import { useAuthContext } from '../lib/authContext.js'
 
-export default function search() {
+export default function search(props){
 
 	const {auth, setAuthStatus} = useAuthContext();
 
@@ -12,10 +12,10 @@ export default function search() {
 		<div className={styles.searchContainer}>
 			<div className={styles.inputContainer}>	
 				<img className={styles.icon}src="/Search Icon.svg"/>
-				<input placeholder="Search for camps" className={styles.input} type="text" />
+				<input onKeyUp={props.onkeyup} placeholder="Search for camps" className={styles.input} type="text" />
 			</div>
 			<Button>Search</Button>
 			{auth.loggedIn ? (<Link href="addCampground"><span className={styles.add}>Or add your own campground</span></Link>) : ""}
 		</div>
 	)
-}
+} 
