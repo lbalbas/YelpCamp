@@ -5,10 +5,13 @@ import Link from 'next/link';
 import styles from './login.module.scss';
 import Router from 'next/router'
 import axios from 'axios';
+import { useAuthContext } from './lib/authContext.js'
 
 export default function SignUp() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
+	const [message, setMessage] = useState(false);
+	const {auth, setAuthStatus} = useAuthContext();
 
 	function sendSignUp(e){
 		e.preventDefault();
@@ -18,12 +21,19 @@ export default function SignUp() {
 	    	'password': password,
 	  })
 	  .then(function (response) {
-	    Router.push('/campgrounds')
+	  	if (response.status == 200){
+	  		setAuthStatus({loggedIn: true, user: response.user})
+	    	return Router.push('/campgrounds')
+	  	}
 	  })
 	  .catch(function (error) {
-	    console.log(error);
+	    if(error.response.status == 409)
+	    	setMessage(error.response.data.msg)
+	    else
+	    	console.log(error);
 	  });
 	}
+	var warning = (<h3 className={styles.warn}>! {message}</h3>)
 
 	return(
 		<div className={styles.container}>
@@ -39,6 +49,7 @@ export default function SignUp() {
 				<div className={styles.login}>
 					<form onSubmit={(e)=>sendSignUp(e)} className={styles.form} action="">
 						<h1 className="bold">Start exploring camps from all around the world.</h1>
+						{message ? warning : ""}						
 						<label htmlFor="user">Username</label>
 						<input onKeyUp={(e)=> setUsername(e.target.value)} required placeholder="johndoe_91" type="text"/>
 						<label htmlFor="password">Password</label>

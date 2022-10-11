@@ -10,6 +10,7 @@ import { useAuthContext } from './lib/authContext.js'
 export default function LogIn() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
+	const [message, setMessage] = useState(false);
 	const {auth, setAuthStatus} = useAuthContext();
 
 	function sendLogin(e){
@@ -24,12 +25,15 @@ export default function LogIn() {
 	  		setAuthStatus({loggedIn: true, user: response.user})
 	    	return Router.push('/campgrounds')
 	  	}
-	  	//Do something about wrong credentials
 	  })
 	  .catch(function (error) {
-	    console.log(error);
+	    if(error.response.status == 401)
+	    	setMessage(error.response.data.msg)
+	    else
+	    	console.log(error);
 	  });
 	}
+	var warning = (<h3 className={styles.warn}>! {message}</h3>)
 	return(
 		<div className={styles.container}>
 		<Head>
@@ -44,6 +48,7 @@ export default function LogIn() {
 				<div className={styles.login}>
 					<form onSubmit={(e)=>sendLogin(e)} className={styles.form} method="post">
 						<h1 className="bold">Start exploring camps from all around the world.</h1>
+						{message ? warning : ""}
 						<label htmlFor="user">Username</label>
 						<input onKeyUp={(e)=> setUsername(e.target.value)} required placeholder="johndoe_91" type="text"/>
 						<label htmlFor="password">Password</label>

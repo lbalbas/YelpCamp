@@ -13,7 +13,7 @@ authRoute.get('/', async (req,res)=>{
         return res.status(401).json({msg: "Not logged in"})
 })
 
-authRoute.post('/login',async (req,res) => login(req,res))
+authRoute.post('/login',(req,res) => login(req,res))
 
 authRoute.post('/signup',(req,res)=>{
     const { username } = req.body;
@@ -23,7 +23,7 @@ authRoute.post('/signup',(req,res)=>{
         const query = {'username' : username};
         const count = await db.collection("users").countDocuments(query);
         if(count)
-            return res.status(409).json({message: "User already exists"})
+            return res.status(409).json({msg: "Username is already in use"})
         const cursor = await db.collection("users").insertOne({username: username, password: password});
         login(req, res);
     },res)
@@ -40,10 +40,11 @@ function login(req, res){
         let user = await cursor.toArray();
         user = user[0];
 
-        if(user.username == req.body.username && md5(req.body.password) == user.password){
+        if(user && user.username == req.body.username && md5(req.body.password) == user.password){
            res.cookie('session',user.username, { maxAge: 604800000 , httpOnly: true, secure: true })
            return res.status(200).json({status: 200, msg: "Now Logged In", user: user.username}); 
         }
+        
         return res.status(401).json({status: 401,msg: "Wrong Credentials"});
     },res)
 }
