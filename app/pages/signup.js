@@ -33,7 +33,7 @@ export default function SignUp() {
 	    	console.log(error);
 	  });
 	}
-	var warning = (<h3 className={styles.warn}>! {message}</h3>)
+	var warning = (<h3 className={styles.warn}><img src="/alert-circle-outline.svg"/>{message}</h3>)
 
 	return(
 		<div className={styles.container}>
