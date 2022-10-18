@@ -29,7 +29,7 @@ export default function button(props) {
 	},);
 
 	if(loading){
-		return <div>Loading...</div>
+		return <div></div>
 	}else{
 		return (
 		<div className={styles.commentList}>
