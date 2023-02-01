@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Head from "next/head";
 import Navbar from './components/Navbar.js'
 import Footer from './components/Footer.js'
 import Button from './components/Button.js'
