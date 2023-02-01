@@ -11,7 +11,7 @@ export const authContext = React.createContext({
 
 export const useAuthContext = () => useContext(authContext)
 
-export default const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }) => {
   const [auth, setAuthStatus] = useState({loggedIn: false, user: undefined,})
   
   useEffect(()=>{
