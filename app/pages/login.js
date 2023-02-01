@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styles from './login.module.scss';
 import axios from 'axios';
 import Router from 'next/router';
-import { useAuthContext } from './lib/authContext.js'
+import { useAuthContext } from '../../lib/authContext.js'
 
 export default function LogIn() {
 	const [username, setUsername] = useState("");

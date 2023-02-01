@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Search.module.scss';
 import Button from './Button.js'
 import Link from 'next/link';
-import { useAuthContext } from '../lib/authContext.js'
+import { useAuthContext } from '../../lib/authContext.js'
 
 export default function search(props){
 

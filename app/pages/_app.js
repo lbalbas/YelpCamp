@@ -1,5 +1,5 @@
 import "./app.scss";
-import { AuthProvider } from './lib/authContext.js';
+import { AuthProvider } from '../lib/authContext.js';
 
 function MyApp({ Component, pageProps }) {
 	return (

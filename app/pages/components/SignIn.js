@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './Button.js'
 import Link from 'next/link';
 import styles from './SignIn.module.scss'
-import { useAuthContext } from '../lib/authContext.js'
+import { useAuthContext } from '../../lib/authContext.js'
 import axios from 'axios';
 
 export default function navbar() {
