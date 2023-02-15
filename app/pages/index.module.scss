@@ -117,7 +117,7 @@ $light-text : #777370;
 		grid-column-end: span 24;
 		grid-row-start: 3;
 		grid-row-end: span 8;
-		width: 100vw;
+		width: 100%;
 		background-size: initial;
 		background-position: center 70%;
 	}
@@ -142,58 +142,18 @@ $light-text : #777370;
 }
 
 
-@media (min-width: 500px) and (max-width: 1023px){
-	.logo{
-		padding-top: 5px;
-		grid-row-start: 2;
-		grid-row-end: 3;
-		grid-column-start: 3;
-	}
-	.hero-banner{
-		background-color: #f9f6f1;
-		border-radius: 5px;
-		width: 90%;
-		margin: 4rem auto;
-		padding-bottom: 2rem;
-		h2{
-			padding: 4rem 0 0 3rem;
-		}
-		p{
-			padding: 0 0 0 3rem;
-			color: $light-text;
-			font-weight: 500;
-			width: 80%;
-		}
-	}
-	.landing-page{
-		height: 100%;
-		grid-template-rows: repeat(20, 50px);
-	}
-	.landing-image{
-		background-image: url("../public/Hero Image (Tablet and Mobile).jpg");
-		grid-column-start: 1;
-		grid-column-end: span 24;
+@media (min-width: 500px) and (max-width: 1259px){
+	.landing-main{
+		display: grid;
 		grid-row-start: 4;
-		grid-row-end: span 12;
-		height: 100%;
-		width: 100vw;
-		background-size: contain;
-	}
-	.landing-main{
-		grid-column-start: 3;
-		grid-column-end: span 17;
-		grid-row-start: 13;
-		grid-row-end: span 25;
-	}
-	.landing-main{
 		h1{
-			font-size: 3rem;
+			font-size: 2.5rem;
 		}
 		p{
-			width: 85%;
+			margin-bottom: 0;
 		}
 	}
 	.landing-partners{
-		padding-bottom: 30px;
+		margin-top: 25px;
 	}
 }
